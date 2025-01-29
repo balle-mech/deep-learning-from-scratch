@@ -1,11 +1,9 @@
 # coding: utf-8
 import sys
-import os
-from common.functions import *
+sys.path.append('../')
+from common.functions import softmax, cross_entropy_error
 from common.util import im2col, col2im
 import numpy as np
-
-sys.path.append(os.pardir)
 
 
 class Relu:
@@ -80,7 +78,7 @@ class SoftmaxWithLoss:
     def forward(self, x, t):
         self.t = t
         self.y = softmax(x)
-        self.loss = functions.cross_entropy_error(self.y, self.t)
+        self.loss = cross_entropy_error(self.y, self.t)
 
         return self.loss
 

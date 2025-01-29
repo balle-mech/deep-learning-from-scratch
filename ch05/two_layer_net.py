@@ -6,6 +6,7 @@ import numpy as np
 from common.layers import *
 from common.gradient import numerical_gradient
 from collections import OrderedDict
+from common.functions import *
 
 
 class TwoLayerNet:
